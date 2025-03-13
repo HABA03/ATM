@@ -7,7 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="14.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ATM.DAL\ATM.DAL.csproj" />
+    <ProjectReference Include="..\ATM.EN\ATM.EN.csproj" />
   </ItemGroup>
 
 </Project>
