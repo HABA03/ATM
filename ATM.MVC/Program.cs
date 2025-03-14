@@ -1,4 +1,6 @@
 using ATM.DAL.Context;
+using ATM.MVC.DependencyInjection;
+using ATM.MVC.Mapping;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +12,10 @@ builder.Services.AddDbContext<ATMDbContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
+
+DependencyContainer.RegisterService(builder.Services);
+
+builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 var app = builder.Build();
 

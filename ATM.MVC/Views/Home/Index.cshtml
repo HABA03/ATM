@@ -1,8 +1,55 @@
-﻿@{
+﻿@model ATM.MVC.Models.ContactMessageModel.ContactMessageModelRequest
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="section--container">
+    <h1>Welcome</h1>
+
+    <div id="modalform" class="modal--form" style="display: none;">
+        <div class="modalformheader">
+            <p>Contact Message</p>
+            <input id="closemodalbutton" class="modal--button__close" type="button" value="X" />
+        </div>
+        <form asp-action="CreateContactMessage" method="post">
+            <div class="form--section">
+                <label for="Name">Name</label>
+                <input type="text" id="Name" asp-for="Name" required />
+                <span asp-validation-for="Name"></span>
+            </div>
+
+            <div class="form--section">
+                <label for="Email">Email</label>
+                <input type="email" id="Email" asp-for="Email" required />
+                <span asp-validation-for="Email"></span>
+            </div>
+
+            <div class="form--section">
+                <label for="Message">Message</label>
+                <textarea id="Message" asp-for="Message" required></textarea>
+                <span asp-validation-for="Message"></span>
+            </div>
+
+            <div class="form--section">
+                <button type="submit">Enviar mensaje</button>
+            </div>
+        </form>
+    </div>
+    <input id="modalbutton" class="modal--button" type="button" value="Registrar contacto" />
 </div>
+
+<script>
+    var modalform = document.getElementById("modalform");
+    var modalbutton = document.getElementById("modalbutton");
+    var closemodalbutton = document.getElementById("closemodalbutton");
+
+    modalbutton.addEventListener("click", () => {
+        modalform.style.display = "block";
+        modalbutton.style.display = "none";
+    });
+
+    closemodalbutton.addEventListener("click", () =>{
+        modalform.style.display = "none";
+        modalbutton.style.display = "block";
+    });
+</script>

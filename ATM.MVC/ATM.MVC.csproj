@@ -10,4 +10,8 @@
     <ProjectReference Include="..\ATM.BL\ATM.BL.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\images\" />
+  </ItemGroup>
+
 </Project>

@@ -1,4 +1,7 @@
+using ATM.BL.IServices;
+using ATM.EN.DTOs.ContactMessage.Create;
 using ATM.MVC.Models;
+using ATM.MVC.Models.ContactMessageModel;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -7,10 +10,11 @@ namespace ATM.MVC.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly IContactMessageService _service;
+        public HomeController(ILogger<HomeController> logger, IContactMessageService service)
         {
             _logger = logger;
+            _service = service;
         }
 
         public IActionResult Index()
@@ -18,15 +22,13 @@ namespace ATM.MVC.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        [HttpPost]
+        [ProducesResponseType(typeof(ContactMessageModelResponse), StatusCodes.Status200OK)]
+        public async Task<IActionResult> CreateContactMessage(ContactMessageModelRequest request) 
         {
-            return View();
-        }
+            var response = await _service.CreateContactMessage(new CreateContactMessageRequest { Name = request.Name, Email = request.Email, Message = request.Message });
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return RedirectToAction("Index");
         }
     }
 }
