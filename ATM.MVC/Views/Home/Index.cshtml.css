@@ -1,0 +1,505 @@
+﻿.section--container {
+    width: 100%;
+    height: 300vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.section {
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Section 1 */
+.section1 {
+    background-image: url('/images/FirstSection.jpg');
+    display: flex;
+    justify-content: start;
+    align-items: end;
+    padding: 80px;
+}
+
+.section--h1 {
+    color: #fff;
+    text-align: start;
+}
+
+@media (max-width: 500px) {
+    .section1 {
+        padding: 80px 20px;
+    }
+}
+
+/* Section 2 */
+.section2 {
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    color: #fff;
+    background-size: cover;
+}
+
+.section2--description {
+    text-align: center;
+    color: #fff;
+    padding: 25px;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.description--text {
+    font-size: 1.2rem;
+    color: #fff;
+    line-height: 1.6;
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.title--text {
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+    .section2 {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .section2--description {
+        width: 100%;
+        text-align: center;
+    }
+
+    .description--text {
+        font-size: 1rem;
+        max-width: 90%;
+    }
+}
+
+/* Section 3 */
+.section3 {
+    width: 100%;
+    height: 100vh;
+}
+
+
+/* Modal Styles */
+.modal--form {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 10;
+    background-color: #000;
+    padding: 25px;
+    border-radius: 5px;
+    width: 400px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+@media (max-width: 500px) {
+    .modal--form {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        min-height: 100vh;
+        background-color: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: auto;
+    }
+
+}
+
+input {
+    outline: none;
+    border: none;
+}
+
+.modalformheader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-size: 1.2rem;
+    border-bottom: 1px solid #fff; 
+    padding-bottom: 10px;
+}
+
+/* Close Button */
+.modal--button__close {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.modal--button__close:hover {
+    color: #ccc;
+}
+
+/* Form Section */
+.form--section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+    /* Label */
+.form--section label {
+    font-size: 1rem;
+    color: #fff;
+}
+
+/* Input and Textarea */
+.form--section input, .form--section textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #222;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.form--section input:focus, .form--section textarea:focus {
+    outline: none;
+    border-color: #fff;
+}
+
+/* Validation Messages */
+span {
+    font-size: 0.9rem;
+    color: #f44336;
+}
+
+/* Submit Button */
+.form--section button {
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.form--section button:hover {
+    background-color: #444;
+}
+
+/* Modal Button */
+.modal--button {
+    position: fixed;
+    right: 25px;
+    bottom: -1px;
+    z-index: 10;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    background-color: #000;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.modal--button:hover {
+    background-color: #444;
+}
+
+
+/* Estilo base para el carrusel */
+.slider--container {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider--container ul {
+    display: flex;
+    width: 400%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    animation: slide 20s infinite;
+}
+
+.slider--container li {
+    width: 25%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Estilo para cada elemento del carrusel */
+.carousel {
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: start;
+    color: #fff;
+    padding: 20px;
+}
+
+.carousel h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px #000;
+}
+
+.carousel input[type="button"] {
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.carousel input[type="button"]:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Keyframes para la animación del carrusel */
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+
+    20% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-25%);
+    }
+
+    45% {
+        transform: translateX(-25%);
+    }
+
+    50% {
+        transform: translateX(-50%);
+    }
+
+    70% {
+        transform: translateX(-50%);
+    }
+
+    75% {
+        transform: translateX(-75%);
+    }
+
+    95% {
+        transform: translateX(-75%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Fondos de los elementos del carrusel */
+.carousel--item1 {
+    background-image: url('/images/Mercedes-BenzS-Class.jpg');
+}
+
+.carousel--item2 {
+    background-image: url('/images/AudiR8.jpg');
+}
+
+.carousel--item3 {
+    background-image: url('/images/LamborghiniUrus.jpg');
+}
+
+.carousel--item4 {
+    background-image: url('/images/AstonMartinDB11.jpg');
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+
+    .carousel h2 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .carousel input[type="button"] {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+}
+
+
+/* Section 3 - Testimonios en horizontal */
+.section3 {
+    background-color: #121212;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.section3::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/images/SecondSection.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.2;
+    z-index: 0;
+}
+
+.section3-container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Testimonios */
+.testimonials {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.testimonials h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+.testimonials h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 1px;
+    background-color: #fff;
+}
+
+
+/* Contenedor horizontal para las tarjetas */
+.testimonials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Contenedor para las tarjetas en horizontal */
+.testimonials > div:not(:first-child) {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.testimonial-item {
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    margin-bottom: 0;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-stars {
+    color: #e0a800;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.testimonial-text {
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.testimonial-author {
+    text-align: right;
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .testimonials > div:not(:first-child) {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .testimonial-item {
+        flex: 0 0 calc(50% - 15px);
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonials h2 {
+        font-size: 1.8rem;
+    }
+
+    .testimonial-item {
+        flex: 0 0 100%;
+    }
+}
