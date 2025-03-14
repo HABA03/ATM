@@ -1,50 +1,49 @@
-﻿/* Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-for details on configuring this project to bundle and minify static web assets. */
-
+﻿/* Global Styles */
 * {
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
-    color: #4A4A4A;
+    --navTextColor: #000;
 }
 
-
+/* Header */
 .header {
-    height: 15vh;
+    min-height: 15vh;
     width: 100%;
-    background-color: transparent;
+    background-color: #000d;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 25px;
-    position: fixed;
+    position: absolute;
+    z-index: 10;
 }
 
+/* Navbar */
 .navbar {
     width: 100%;
 }
 
-.main--container {
-    width: 100%;
-    min-height: 100vh;
-    background-color: #F8F9FA;
+.span-menu {
+    background-color: #fff;
 }
 
-.footer--content {
-    background-color: transparent;
-    width: 100%;
+.nav--item {
+    color: var(--navTextColor);
+    text-decoration: none;
+    margin: 0px 25px;
+    animation-name: changeNavItems;
+    animation-fill-mode: both;
+    animation-timing-function: linear;
+    animation-timeline: scroll();
 }
 
-.footer--container {
-    width: 100%;
-    height: 15vh;
-    background-color: #50688F;
-    padding: 25px;
-    display: flex;
-    align-items: center;
-    position: absolute;
-    bottom: 0;
-    left: 0;
+.nav--item:hover {
+    cursor: pointer;
+}
+
+.nav--name {
+    font-size: 1.5rem;
 }
 
 a.navbar-brand {
@@ -54,41 +53,174 @@ a.navbar-brand {
 }
 
 a {
-  color: #0077cc;
+    color: #0077cc;
 }
 
+@media (max-width: 575px) {
+    .navbar-nav li {
+        margin: 5px 0px;
+    }
+
+    .nav--name {
+        margin-left: 5px;
+        border-left: 2px solid #fff;
+        padding-left: 20px;
+    }
+
+    .header {
+        background-color: #000a;
+    }
+
+    .span-menu {
+        background-color: #56545466 !important;
+    }
+
+    .navbar-light {
+        border: none !important;
+    }
+}
+
+/* Buttons */
 .btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
-}
-
-.border-top {
-  border-top: 1px solid #e5e5e5;
-}
-.border-bottom {
-  border-bottom: 1px solid #e5e5e5;
-}
-
-.box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
 }
 
 button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
+    font-size: 1rem;
+    line-height: inherit;
 }
 
+/* Borders */
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+/* Box Shadow */
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+/* Footer */
 .footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  white-space: nowrap;
-  line-height: 60px;
+    background-color: #fff;
+    padding: 40px 20px 20px;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    margin-top: auto;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #000;
+}
+
+.footer-logo h3 {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+.footer-logo p {
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+
+.footer-contact {
+    text-align: right;
+}
+
+.footer-contact p {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.social-icons {
+    margin-top: 15px;
+}
+
+.social-icon {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    margin-left: 10px;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: #777;
+    cursor: pointer;
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 0.8rem;
+    opacity: 0.7;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .footer-contact {
+        text-align: center;
+    }
+}
+
+/* Keyframes */
+@keyframes changeHeader {
+    0% {
+        background-color: #000;
+    }
+
+    30% {
+        background-color: transparent;
+    }
+
+    100% {
+        background-color: transparent;
+    }
+}
+
+@keyframes changeNavItems {
+    0% {
+        color: #fff;
+    }
+
+    30% {
+        color: var(--navTextColor);
+    }
+
+    100% {
+        color: var(--navTextColor);
+    }
 }

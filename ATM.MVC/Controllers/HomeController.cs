@@ -24,11 +24,25 @@ namespace ATM.MVC.Controllers
 
         [HttpPost]
         [ProducesResponseType(typeof(ContactMessageModelResponse), StatusCodes.Status200OK)]
-        public async Task<IActionResult> CreateContactMessage(ContactMessageModelRequest request) 
+        public async Task<IActionResult> CreateContactMessage(ContactMessageModelRequest request)
         {
-            var response = await _service.CreateContactMessage(new CreateContactMessageRequest { Name = request.Name, Email = request.Email, Message = request.Message });
+            var response = await _service.CreateContactMessage(new CreateContactMessageRequest
+            {
+                Name = request.Name,
+                Email = request.Email,
+                Message = request.Message
+            });
+
+            if (!response.Response)
+            {
+                return View("Error", new ErrorViewModel
+                {
+                    RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier,
+                });
+            }
 
             return RedirectToAction("Index");
         }
+
     }
 }

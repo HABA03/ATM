@@ -3,35 +3,50 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="AutoPrime Motors is a leader in the sale of new and pre-owned vehicles, offering a wide variety of quality cars at competitive prices. Find your ideal vehicle with the best customer service and expert advice."/>
+    <meta name="description" content="Auto Prime Motors is a leader in the sale of new and pre-owned vehicles, offering a wide variety of quality cars at competitive prices. Find your ideal vehicle with the best customer service and expert advice."/>
     <meta name="author" content="AutoPrimeMotors"/>
-    <title>@ViewData["Title"] - ATM.MVC</title>
+
+    <!-- Open Graph para compartir en redes sociales -->
+    <meta property="og:title" content="Auto Prime Motors - Find Your Dream Car" />
+    <meta property="og:description" content="Auto Prime Motors offers the best deals on new and pre-owned vehicles. Find your ideal car today!" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="URL_DEL_SITIO_AQUI" /> <!-- URL de la página cuando esté en línea -->
+    <meta property="og:image" content="URL_DE_LA_IMAGEN_AQUI" /> <!-- Imagen representativa para compartir en redes sociales -->
+    <!-- Twitter Cards para mejorar la visualización en Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Auto Prime Motors - Find Your Dream Car" />
+    <meta name="twitter:description" content="Get the best deals on new and pre-owned vehicles at Auto Prime Motors." />
+    <meta name="twitter:image" content="URL_DE_LA_IMAGEN_AQUI" /> <!-- Imagen para Twitter -->
+
+
+    <title>@ViewData["Title"] - AUTO PRIME MOTORS</title>
+    <link rel="icon" type="image/png" href="~/images/favicon.png" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ATM.MVC.styles.css" asp-append-version="true" />
 </head>
-<body>
+<body class="body">
     <header class="header">
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">AutoPrime Motors</a>
+                <a class="nav--name nav--item">Auto Prime Motors</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon span-menu"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        <li>
+                            <a class="nav--item">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        <li>
+                            <a class="nav--item">Privacy</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Offers</a>
+                        <li>
+                            <a class="nav--item">Offers</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Brands</a>
+                        <li>
+                            <a class="nav--item">Brands</a>
                         </li>
                     </ul>
                 </div>
@@ -39,16 +54,33 @@
         </nav>
     </header>
     <div class="main--container">
-        <main role="main" class="pb-3">
+        <main role="main">
                 @RenderBody()
         </main>
     </div>
 
-    <footer class="footer--container">
-        <div class="footer--content">
-            &copy; 2025 - ATM.MVC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <div class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h3>AUTO PRIME MOTORS</h3>
+                <p>Elegance in every curve. Power in every ride.</p>
+            </div>
+            <div class="footer-contact">
+                <p><strong>Address:</strong> Main Avenue 123, City</p>
+                <p><strong>Phone:</strong> (01) 234-5678</p>
+                <p><strong>Email:</strong> info@autoprimemotors.com</p>
+                <div class="social-icons">
+                    <span class="social-icon">f</span>
+                    <span class="social-icon">in</span>
+                    <span class="social-icon">ig</span>
+                </div>
+            </div>
         </div>
-    </footer>
+        <div class="copyright">
+            <p>© 2025 AUTO PRIME MOTORS. All rights reserved.</p>
+        </div>
+    </div>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
